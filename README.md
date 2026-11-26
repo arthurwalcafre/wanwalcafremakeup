@@ -2,7 +2,9 @@
 
 Landing page profissional desenvolvida para a maquiadora **Wanessa Walcafre**, com foco em agendamentos rápidos via WhatsApp e apresentação de portfólio de serviços (noivas, madrinhas, formaturas, ensaios e maquiagem social) com atendimento em Mauá e Santo André (SP).
 
-## Demonstração & Funcionalidades
+🔗 **Acesse o site online:** [wan.walcafremakeup.workers.dev](https://wan.walcafremakeup.workers.dev/)
+
+## Funcionalidades
 
 - **Design Responsivo (Mobile-First):** Layout adaptável para celulares, tablets e computadores.
 - **Agendamento Direto:** Botões de chamada para ação (CTA) integrados com link direto para o WhatsApp e mensagem pré-preenchida.
@@ -16,6 +18,7 @@ Landing page profissional desenvolvida para a maquiadora **Wanessa Walcafre**, c
 - **CSS3:** Variáveis CSS (`:root`), Flexbox, CSS Grid, tipografia fluida (`clamp()`) e media queries.
 - **JavaScript (Vanilla):** Controle de fechamento automático do menu mobile (`script.js`).
 - **Google Fonts:** Tipografias *Bodoni Moda* (títulos) e *Figtree* (textos).
+- **Cloudflare Workers:** Hospedagem e entrega estática de alta velocidade.
 
 ## Estrutura de Arquivos
 
