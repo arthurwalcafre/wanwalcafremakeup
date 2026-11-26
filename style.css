@@ -1,0 +1,192 @@
+/* Wanessa Walcafre Makeup — estilos */
+
+:root {
+  --ameixa: #2a1020;
+  --vinho: #8e1f4a;
+  --rosa: #e9b8c0;
+  --blush: #f8eaec;
+  --branco: #fffafa;
+  --display: "Bodoni Moda", Didot, Georgia, serif;
+  --texto: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body {
+  margin: 0;
+  background: var(--branco);
+  color: var(--ameixa);
+  font-family: var(--texto);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--vinho); outline-offset: 3px; }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.1; margin: 0; }
+h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 2rem; }
+p { margin: 0 0 1rem; max-width: 60ch; }
+
+.conteudo { max-width: 1100px; margin: 0 auto; }
+
+/* ---------- Topo ---------- */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem clamp(1.25rem, 5vw, 4rem);
+  background: rgba(255, 250, 250, .94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--blush);
+}
+.marca { font-family: var(--display); font-size: 1.2rem; font-weight: 600; text-decoration: none; }
+.menu { display: flex; gap: 2rem; }
+.menu a { text-decoration: none; font-weight: 500; }
+.menu a:hover { color: var(--vinho); text-decoration: underline; text-underline-offset: 6px; }
+.menu-toggle { position: absolute; opacity: 0; pointer-events: none; }
+.menu-botao { display: none; cursor: pointer; padding: .5rem; }
+.menu-botao span,
+.menu-botao span::before { display: block; width: 24px; height: 2px; background: var(--ameixa); }
+.menu-botao span { box-shadow: 0 -7px var(--ameixa), 0 7px var(--ameixa); background: var(--ameixa); }
+.menu-botao span::before { content: none; }
+.menu-toggle:focus-visible + .menu-botao { outline: 3px solid var(--vinho); }
+
+/* ---------- Botões ---------- */
+.botoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
+.btn {
+  display: inline-block; padding: .9rem 1.6rem; border-radius: 999px;
+  background: var(--vinho); color: var(--branco);
+  font-weight: 600; text-decoration: none;
+  border: 2px solid var(--vinho);
+  transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--ameixa); border-color: var(--ameixa); }
+.btn-leve { background: transparent; color: var(--ameixa); border-color: var(--ameixa); }
+.btn-leve:hover { background: var(--ameixa); color: var(--branco); }
+.btn-claro { background: var(--blush); color: var(--ameixa); border-color: var(--blush); }
+.btn-claro:hover { background: var(--rosa); border-color: var(--rosa); }
+.btn-contorno { background: transparent; color: var(--branco); border-color: var(--rosa); }
+.btn-contorno:hover { background: var(--rosa); color: var(--ameixa); border-color: var(--rosa); }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--blush);
+  padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 5vw, 4rem) 0;
+  overflow: hidden;
+}
+.hero .conteudo {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem); align-items: end;
+}
+.hero-texto { padding-bottom: clamp(2.5rem, 7vw, 5rem); }
+.hero h1 { font-size: clamp(3.2rem, 9vw, 6.5rem); font-weight: 600; letter-spacing: -.02em; margin-bottom: 1.5rem; }
+
+.hero-arco {
+  position: relative; width: 100%; max-width: 400px; margin-left: auto;
+  aspect-ratio: 3 / 4;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(165deg, var(--rosa) 0%, #c76a86 55%, var(--vinho) 100%);
+  overflow: hidden;
+}
+.hero-arco img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Paleta de pigmentos: aparece enquanto não há foto */
+.paleta { position: absolute; left: 0; right: 0; bottom: 8%; display: flex; justify-content: center; }
+.paleta span {
+  width: 18%; aspect-ratio: 1; border-radius: 50%;
+  margin: 0 -2.5%; border: 3px solid var(--branco);
+}
+.paleta span:nth-child(1) { background: #f4d3c8; }
+.paleta span:nth-child(2) { background: #d98a93; }
+.paleta span:nth-child(3) { background: #8e1f4a; }
+.paleta span:nth-child(4) { background: #4a1330; }
+.paleta span:nth-child(5) { background: #e0b28a; }
+
+/* ---------- Seções ---------- */
+.secao { padding: clamp(3.5rem, 9vw, 6.5rem) clamp(1.25rem, 5vw, 4rem); }
+.secao-rosa { background: var(--blush); }
+.secao-escura { background: var(--ameixa); color: var(--branco); }
+
+/* Serviços */
+.servicos { list-style: none; margin: 0; padding: 0; }
+.servicos li {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 1rem 3rem;
+  padding: 1.5rem 0; border-top: 1px solid var(--rosa);
+}
+.servicos li:last-child { border-bottom: 1px solid var(--rosa); }
+.servicos h3 { font-size: 1.7rem; }
+.servicos p { margin: 0; }
+
+/* Galeria */
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; gap: 1rem; }
+.foto {
+  position: relative; margin: 0; overflow: hidden;
+  border-radius: 6px 6px 120px 6px;
+}
+.foto img { width: 100%; height: 100%; object-fit: cover; }
+.foto figcaption {
+  position: absolute; left: 1rem; bottom: .8rem;
+  font-family: var(--display); font-size: 1.3rem; color: var(--branco);
+}
+.f1 { grid-row: span 2; background: linear-gradient(160deg, #e9b8c0, #8e1f4a); }
+.f2 { background: linear-gradient(140deg, #d98a93, #4a1330); border-radius: 6px 120px 6px 6px; }
+.f3 { background: linear-gradient(140deg, #e0b28a, #8e1f4a); }
+.f4 { grid-row: span 2; background: linear-gradient(200deg, #f4d3c8, #c76a86); border-radius: 120px 6px 6px 6px; }
+.f5 { background: linear-gradient(140deg, #c76a86, #2a1020); }
+.f6 { background: linear-gradient(160deg, #f4d3c8, #d98a93); }
+
+/* Sobre */
+.sobre { display: grid; grid-template-columns: 1fr 1.4fr; gap: 1rem 3rem; align-items: start; }
+.sobre h2 { margin-bottom: 0; }
+.sobre p { font-size: 1.2rem; }
+
+/* Contato */
+.contato h2 { max-width: 16ch; }
+.contato p { color: var(--blush); }
+
+/* Rodapé */
+.rodape { padding: 1.5rem; text-align: center; background: var(--ameixa); color: var(--rosa); border-top: 1px solid rgba(233, 184, 192, .25); }
+.rodape p { margin: 0 auto; font-size: .95rem; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 760px) {
+  .menu-botao { display: block; }
+  .menu {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--branco);
+    border-bottom: 1px solid var(--blush);
+  }
+  .menu a { padding: 1rem clamp(1.25rem, 5vw, 4rem); border-top: 1px solid var(--blush); }
+  .menu-toggle:checked ~ .menu { display: flex; }
+
+  body { font-size: 1rem; line-height: 1.55; }
+  h2 { font-size: 1.9rem; margin-bottom: 1.2rem; }
+  .secao { padding-block: 2.5rem; }
+  .btn { padding: .75rem 1.3rem; }
+  .botoes { gap: .6rem; margin-top: 1.2rem; }
+
+  .hero { padding-top: 1.5rem; }
+  .hero .conteudo { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+  .hero-texto { padding-bottom: 0; }
+  .hero-arco { margin: 0 auto; max-width: 260px; aspect-ratio: 1; }
+  .hero-arco img { object-position: center 20%; }
+
+  .servicos li, .sobre { grid-template-columns: 1fr; }
+  .servicos li { padding: 1rem 0; gap: .3rem; }
+  .servicos h3 { font-size: 1.4rem; }
+  .sobre { gap: .5rem; }
+  .sobre h2 { margin-bottom: .5rem; }
+  .sobre p { font-size: 1.05rem; }
+
+  .galeria { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 120px; gap: .6rem; }
+  .foto { border-radius: 6px 6px 50px 6px; }
+  .f2 { border-radius: 6px 50px 6px 6px; }
+  .f4 { border-radius: 50px 6px 6px 6px; }
+  .foto figcaption { font-size: 1.1rem; left: .7rem; bottom: .5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
